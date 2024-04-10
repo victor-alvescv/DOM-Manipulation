@@ -1,0 +1,94 @@
+#clock {
+    background-color: rgb(201, 194, 194);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.number {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 24px ;
+}
+
+.handle {
+    position: absolute;
+    width: 1px;
+    height: 200px;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 50%;
+    background-color: black;
+}
+
+.handle__mili {
+    background-color: blue;
+    transform-origin: bottom;
+}
+
+.handle__second {
+    background-color: red;
+    width: 1px;
+    height: 220px;
+    transform: rotate(90deg);
+    transform-origin: bottom;
+}
+
+.handle__hour {
+    width: 4px;
+    height: 100px;
+    transform-origin: bottom;
+}
+
+.handle__minute {
+    width: 2px;
+    height: 200px;
+    transform-origin: bottom;
+}
+
+.number:nth-of-type(1) {
+  transform: rotate(30deg)
+}
+
+.number:nth-of-type(2) {
+    transform: rotate(60deg)
+  }
+
+  .number:nth-of-type(3) {
+    transform: rotate(90deg)
+  }
+
+  .number:nth-of-type(4) {
+    transform: rotate(120deg)
+  }
+
+  .number:nth-of-type(5) {
+    transform: rotate(150deg)
+  }
+
+  .number:nth-of-type(6) {
+    transform: rotate(180deg)
+  }
+
+  .number:nth-of-type(7) {
+    transform: rotate(210deg)
+  }
+
+  .number:nth-of-type(8) {
+    transform: rotate(240deg)
+  }
+
+  .number:nth-of-type(9) {
+    transform: rotate(270deg)
+  }
+
+  .number:nth-of-type(10) {
+    transform: rotate(300deg)
+  }
+
+  .number:nth-of-type(11) {
+  transform: rotate(330deg)
+}
