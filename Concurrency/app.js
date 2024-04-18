@@ -1,4 +1,5 @@
 const NUM_OF_FOLLOWERS = 100;
+const followersHandle = document.querySelector(".followers");
 
 // Asynchronously return NUM_OF_FOLLOWERS hard-coded user IDs
 async function fetchFollowerIds() {
@@ -18,16 +19,26 @@ async function fetchUserData(id) {
   });
 }
 
-// Put your code here
-// ------------------
 async function main() {
-  const users = (await fetchFollowerIds()).map(id => fetchUserData(id))
-  console.log(await Promise.all(users))
-
+  const userIds = await fetchFollowerIds();
+  const users = userIds.map((id) => fetchUserData(id));
+  const userData = await Promise.all(users);
+  console.log(userData);
+  followersHandle.innerHTML = userData.map((user) => userHtml(user)).join("");
 }
 
-main()
-// ------------------
+function userHtml(user) {
+  return `<div class="profile">
+  <img class="profile__avatar" src=${user.avatar}>
+  <div class="profile__info">
+    <p class="profile__username">${user.username}</p>
+    <p class="profile__bio">${user.bio}</p>
+  </div>
+  <button class="profile__unfollow">Remove</button>
+</div>`;
+}
+
+main();
 
 // Fake data - do not access USERS directly in your solution
 const USERS = [
